@@ -1,0 +1,84 @@
+.main{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 2rem;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    width: 70vw;
+    position: relative;
+   
+  }
+  
+  .input {
+    flex: 1;
+    width: 60vw;
+    height: 3rem;
+    outline: none;
+    font-size: 16px;
+    padding: 4px;
+    border: 1.8ps solid #E3E3E3;
+  }
+  .input::placeholder{
+    padding-left: 2rem;
+  }
+  .searchbtns{
+    position: absolute;
+    width: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+
+  }
+  .skillsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 8px;
+  }
+  
+  .skill {
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .skillText {
+    margin-right: 4px;
+  }
+  
+  .closeIcon {
+    cursor: pointer;
+  }
+  
+  .filterButton {
+    background-color: #ff5a5f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  
+  .clearButton {
+    background-color: transparent;
+    color: #333;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
