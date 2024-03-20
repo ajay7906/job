@@ -3,7 +3,28 @@ import { useState } from 'react';
 import styles from './Search.module.css';
 import SearchBtn from '../../assets/search.png'
 const Search = () => {
-  const [skills, setSkills] = useState(['Frontend', 'CSS', 'JavaScript']);
+  const [skills, setSkills] = useState([]);
+  const [selectedSkill, setSelectedSkill] = useState('')
+  const handleChangeSkill = (value) => {
+    setSelectedSkill(value)
+    console.log(value);
+
+
+
+
+  }
+
+  console.log('gggg');
+
+  const handleSetSkill = () => {
+    if (selectedSkill && !skills.includes(selectedSkill)) {
+      setSkills([...skills, selectedSkill])
+      setSelectedSkill('')
+
+    }
+
+  }
+
 
   const handleCloseSkill = (skill) => {
     setSkills(skills.filter((s) => s !== skill));
@@ -12,7 +33,8 @@ const Search = () => {
   return (
     <div className={styles.main}>
       <div className={styles.container}>
-        <div>
+        <div className={styles.inputSection}>
+
           <img src={SearchBtn} className={styles.searchbtns} alt="" />
           <input
             type="text"
@@ -22,19 +44,36 @@ const Search = () => {
         </div>
 
         <div className={styles.skillsContainer}>
-          {skills.map((skill) => (
-            <div className={styles.skill} key={skill}>
-              <span className={styles.skillText}>{skill}</span>
-              <span
-                className={styles.closeIcon}
-                onClick={() => handleCloseSkill(skill)}
-              >
-                &times;
-              </span>
+          <div className={styles.listSkill}>
+            <select name="" id="" value={selectedSkill} onChange={(e) => handleChangeSkill(e.target.value)} onClick={handleSetSkill}>
+              <option  >Skill</option>
+              <option >java</option>
+              <option >kkf</option>
+            </select>
+            <div className={styles.grid}>
+              {skills.map((skill) => (
+                <div className={styles.skill} key={skill}>
+                  <div className={styles.skillName}>
+                    <span className={styles.skillText}>{skill}</span>
+                  </div>
+                  <div className={styles.closeButton}>
+                    <span
+                      className={styles.closeIcon}
+                      onClick={() => handleCloseSkill(skill)}
+                    >
+                      X
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-          <button className={styles.filterButton}>Apply Filter</button>
-          <button className={styles.clearButton}>Clear</button>
+
+          </div>
+
+          <div>
+            <button className={styles.filterButton} >Apply Filter</button>
+            <button className={styles.clearButton}>Clear</button>
+          </div>
         </div>
 
       </div>
