@@ -6,6 +6,7 @@ import Register from './pages/register/Register'
 import Login from './pages/login/Login'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import JobPostPage from './pages/addjobs/JobPostPage'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/login'  element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/addjob' element={<JobPostPage/>}/>
          
         </Routes>
       </BrowserRouter>
